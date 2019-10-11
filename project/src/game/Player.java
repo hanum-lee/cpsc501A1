@@ -26,6 +26,8 @@ public class Player extends Character
 	private boolean hasExcalibur = false;
 	private AudioPlayer audioPlayer = new AudioPlayer();
 	private Spawner spawner = new Spawner();
+
+	private Experience exp;
 	/**
 	 * This constructor accepts as arguments the name, health, and attack
 	 * It also sets the starting values of max hit points, level and experience
@@ -43,14 +45,21 @@ public class Player extends Character
 		numSmallPotions = player.getNumSmallPotions();
 		numMediumPotions = player.getNumMediumPotions();
 		numLargePotions = player.getNumLargePotions();
-		level = player.getCurrentLevel();
-		currentEXP = player.getCurrentExp();
-		expToLvl = player.getExpToLvl();
+		exp = new Experience(1,0,1);
+//		level = player.getCurrentLevel();
+//		currentEXP = player.getCurrentExp();
+//		expToLvl = player.getExpToLvl();
+		level = exp.getCurrentLevel();
+		currentEXP = exp.getCurrentExp();
+		expToLvl = exp.getExpToLvl();
 		currentWeapon = player.getCurrentWeapon();
 		damage = player.getDamage();
 		hasExcalibur = player.hasExcalibur;
 		hasSword = player.hasSword;
 		hasDagger = player.hasDagger;
+
+
+
 	}
 	/**
 	 * This is the getter method for level, returns level
@@ -63,80 +72,84 @@ public class Player extends Character
 	 * This is the setter method for level
 	 * @param level The level 
 	 */
-	public void setLevel(int level)
-	{
-		if (level > 0) 
-		{
-			this.level = level;
-		}
-	}
+//	public void setLevel(int level)
+//	{
+//		if (level > 0)
+//		{
+//			this.level = level;
+//		}
+//	}
 	/**
 	 * This method checks whether the player has gain sufficient 
 	 * experience to level up, if so the leveUp method is called
 	 */
 	public void checkExp()
 	{
-		if (currentEXP >= expToLvl) 
-		{
-			levelUp();
+//		if (currentEXP >= expToLvl)
+//		{
+//			levelUp();
+//		}
+		if(exp.checkExp()){
+			setAttack(getAttack() + 1);
 		}
 	}
 	/**
 	 * This method increases the level of the player by one
 	 */
-	private void levelUp()
-	{
-		level += 1;
-		if (currentEXP > expToLvl) 
-		{
-			currentEXP -= expToLvl;
-		}
-		expToLvl *= 2;
-		setAttack(getAttack() + 1);
-	}
+//	private void levelUp()
+//	{
+//		level += 1;
+//		if (currentEXP > expToLvl)
+//		{
+//			currentEXP -= expToLvl;
+//		}
+//		expToLvl *= 2;
+//		setAttack(getAttack() + 1);
+//	}
 	/**
 	 * This is the getter method for experience required to level up, returns expToLvl
 	 */
 	public int getExpToLvl()
 	{
-		return expToLvl;
+		return exp.getExpToLvl();
 	}
 	/**
 	 * This is the setter method for required experience to level up
 	 * @param expVal The experience value
 	 */
-	public void setExpToLvl(int expVal)
-	{
-		if (expVal > 0) 
-		{
-			expToLvl = expVal;
-		}
-	}
+//	public void setExpToLvl(int expVal)
+//	{
+//		if (expVal > 0)
+//		{
+//			expToLvl = expVal;
+//		}
+//	}
 	/**
 	 * This is the getter method for current experience, returns currentEXP
 	 */
 	public int getCurrentExp()
 	{
-		return currentEXP;
+		return exp.getCurrentExp();
 	}
 	/**
 	 * This is the setter method for current player experience
 	 * @param expVal The experience value
 	 */
-	public void setCurrentExp(int expVal)
-	{
-		if (expVal > 0) 
-		{
-			currentEXP = expVal;
-		}
-	}
+//	public void setCurrentExp(int expVal)
+//	{
+//		if (expVal > 0)
+//		{
+//			currentEXP = expVal;
+//		}
+//	}
 	/**
 	 * This method is called after defeating an enemy to increase experience
 	 * @param enemy The enemy
 	 */
 	public void obtainExp(Enemy enemy)
 	{
-		currentEXP += new Enemy(enemy).getExperience();
+		int currentExperience = exp.getExperience() + new Enemy(enemy).getExperience();
+		exp.setCurrentExp(currentExperience);
 	}
 	/**
 	 * This method consumes a item based on the itemID passed as argument
