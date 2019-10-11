@@ -27,7 +27,7 @@ public class Player extends Character
 	private AudioPlayer audioPlayer = new AudioPlayer();
 	private Spawner spawner = new Spawner();
 
-	private Experience exp;
+	//private Experience exp;
 	/**
 	 * This constructor accepts as arguments the name, health, and attack
 	 * It also sets the starting values of max hit points, level and experience
@@ -127,10 +127,10 @@ public class Player extends Character
 	/**
 	 * This is the getter method for current experience, returns currentEXP
 	 */
-	public int getCurrentExp()
-	{
-		return exp.getCurrentExp();
-	}
+//	public int getCurrentExp()
+//	{
+//		return exp.getExperience();
+//	}
 	/**
 	 * This is the setter method for current player experience
 	 * @param expVal The experience value

@@ -5,7 +5,7 @@ package game;
  */
 public class Enemy extends Character
 {
-	private int experience;
+	//private int experience;
 	private int damage;
 	/**
 	 * This constructor accepts as arguments the name, health, 
@@ -20,11 +20,11 @@ public class Enemy extends Character
 		super(name, health, attack);
 		if(experience > 0) 
 		{
-			this.experience = experience;
+			this.exp.setCurrentExp(experience);
 		}
 		else 
 		{
-			this.experience = 1;
+			this.exp.setCurrentExp(1);
 		}
 	}
 	/**
@@ -34,7 +34,7 @@ public class Enemy extends Character
 	public Enemy(Enemy enemy)
 	{
 		super(enemy.getName(), enemy.getHealth(), enemy.getAttack());
-		experience = enemy.getExperience();
+		exp.setCurrentExp(enemy.exp.getExperience());
 		damage = enemy.getDamage();
 	}
 	/**
@@ -59,8 +59,8 @@ public class Enemy extends Character
 	/**
 	 * This is the getter method for experience, returns experience
 	 */
-	public int getExperience()
-	{
-		return experience;
-	}
+//	public int getExperience()
+//	{
+//		return experience;
+//	}
 }

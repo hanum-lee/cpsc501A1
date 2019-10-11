@@ -9,6 +9,7 @@ public abstract class Character extends GameObject
 {	
 	private int health;
 	private int attack;
+	protected Experience exp;
 	/**
 	 * This constructor accepts as arguments the name, health, and attack
 	 * @param name The name
@@ -68,4 +69,9 @@ public abstract class Character extends GameObject
 	 * be overridden in a subclass
 	 */
 	public abstract void attack(Character character);
+
+	public int getCurrentExp()
+	{
+		return exp.getExperience();
+	}
 }
