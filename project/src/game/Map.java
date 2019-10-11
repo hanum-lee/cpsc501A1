@@ -80,7 +80,7 @@ public class Map
 	 * This method converts the maze elements to a letter
 	 * to be displayed in the console, returns a text maze
 	 */
-	private String[][] textMaze()
+	public String[][] textMaze()
 	{
 		final int ROWS = 20;
 		final int COLS = 20;

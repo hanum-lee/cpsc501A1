@@ -2,10 +2,11 @@ package Test;
 
 import game.Map;
 import org.junit.Test;
+import game.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MapTest {
+public class MapTest {
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
@@ -19,6 +20,7 @@ class MapTest {
     @Test
     void testtextMaze(){
         Map map = new Map();
-        map.displayMaze();
+        String[][] maze = map.textMaze();
+        assertEquals("test", maze);
     }
 }

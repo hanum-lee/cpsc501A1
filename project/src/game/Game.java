@@ -45,7 +45,9 @@ public class Game implements KeyListener
 	 */
 	public Game()
 	{
-		new Gui(this, gameInterface, battleInterface, inventoryInterface, startingScene, endingScene, victoryScene, textBox);
+		UIHelper uihelper = new UIHelper(player,game);
+		new Gui(this,uihelper);
+		//new Gui(this, gameInterface, battleInterface, inventoryInterface, startingScene, endingScene, victoryScene, textBox);
 		Runtime.getRuntime().addShutdownHook(onExit());
 	}
 	/**

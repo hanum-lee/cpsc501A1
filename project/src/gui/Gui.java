@@ -1,5 +1,7 @@
 package gui;
 
+import game.UIHelper;
+
 import java.awt.event.KeyListener;
 import java.io.File;
 
@@ -46,6 +48,47 @@ public class Gui extends JFrame
         
         checkFiles();
     }
+
+    public Gui(KeyListener listener, UIHelper uiHelper){
+		JFrame window = new JFrame();
+
+		JPanel startingScene = uiHelper.getStartingScene();
+		JPanel gameInterface = uiHelper.getGameInterface();
+		JPanel battleInterface = uiHelper.getBattleInterface();
+		JPanel inventoryInterface = uiHelper.getInventoryInterface();
+		JPanel endingScene = uiHelper.getEndingScene();
+		JPanel victoryScene = uiHelper.getVictoryScene();
+		JPanel textBox = uiHelper.getTextBox();
+
+
+
+		window.setTitle("MAZE RPG");
+		window.addKeyListener(listener);
+		window.setResizable(true);
+		window.setSize(665, 750);
+		window.setLayout(null);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.getContentPane().add(startingScene);
+		window.getContentPane().add(gameInterface);
+		window.getContentPane().add(battleInterface);
+		window.getContentPane().add(inventoryInterface);
+		window.getContentPane().add(endingScene);
+		window.getContentPane().add(victoryScene);
+		window.getContentPane().add(textBox);
+
+		textBox.setLocation(5,650);
+
+		gameInterface.setVisible(false);
+		battleInterface.setVisible(false);
+		inventoryInterface.setVisible(false);
+		endingScene.setVisible(false);
+		victoryScene.setVisible(false);
+		textBox.setVisible(false);
+
+		window.setVisible(true);
+
+		checkFiles();
+	}
     /**
      * This method ensures all graphics are in the the correct
      * directory and that none are corrupt or missing
