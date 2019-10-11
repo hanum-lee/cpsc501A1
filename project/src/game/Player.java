@@ -38,6 +38,8 @@ public class Player extends Character
 	public Player(String name, int health, int attack)
 	{
 		super(name,health,attack);
+		exp = new Experience(1,0,1);
+
 	}
 		public Player(Player player)
 	{
@@ -142,6 +144,8 @@ public class Player extends Character
 //			currentEXP = expVal;
 //		}
 //	}
+
+
 	/**
 	 * This method is called after defeating an enemy to increase experience
 	 * @param enemy The enemy

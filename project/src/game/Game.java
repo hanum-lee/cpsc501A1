@@ -39,13 +39,14 @@ public class Game implements KeyListener
 	private boolean inStartScene = true;
 	private boolean inGameScene = false;
 	private boolean justDefeatedEnemy = false;
+	public UIHelper uihelper;
 	/**
 	 * This constructor will create the GUI that contains a shut down 
 	 * hook that will save the game on exit
 	 */
 	public Game()
 	{
-		UIHelper uihelper = new UIHelper(player,game);
+		uihelper = new UIHelper(player,game);
 		new Gui(this,uihelper);
 		//new Gui(this, gameInterface, battleInterface, inventoryInterface, startingScene, endingScene, victoryScene, textBox);
 		Runtime.getRuntime().addShutdownHook(onExit());

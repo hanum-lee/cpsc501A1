@@ -7,6 +7,7 @@ public class Enemy extends Character
 {
 	//private int experience;
 	private int damage;
+
 	/**
 	 * This constructor accepts as arguments the name, health, 
 	 * attack, and experience fields
@@ -18,6 +19,7 @@ public class Enemy extends Character
 	public Enemy(String name, int health, int attack, int experience)
 	{
 		super(name, health, attack);
+		exp = new Experience(1);
 		if(experience > 0) 
 		{
 			this.exp.setCurrentExp(experience);
