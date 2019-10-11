@@ -21,6 +21,7 @@ public class GameTest {
     }
 
     public GameTest() {
-
+        Game game = new Game();
+        //assertEquals();
     }
 }

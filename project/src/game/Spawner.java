@@ -67,15 +67,17 @@ public class Spawner
 		items.add(null);
 		for (int i = 0; i < 3; i++)
 		{
-			String name = itemScanner.next() + " " + itemScanner.next();
-			int value = itemScanner.nextInt();
-			items.add(new Potion(name, value));
+			extractItemDataIsPotion(true);
+//			String name = itemScanner.next() + " " + itemScanner.next();
+//			int value = itemScanner.nextInt();
+//			items.add(new Potion(name, value));
 		}
 		for (int i = 0; i < 3; i++)
 		{
-			String name = itemScanner.next() + " " + itemScanner.next();
-			int value = itemScanner.nextInt();
-			items.add(new Weapon(name, value));
+			extractItemDataIsPotion(false);
+//			String name = itemScanner.next() + " " + itemScanner.next();
+//			int value = itemScanner.nextInt();
+//			items.add(new Weapon(name, value));
 		}
 		itemScanner.close();
 	}
@@ -113,5 +115,15 @@ public class Spawner
 		final int DEFAULT_STARTING_ATK = 1;
 		String DEFAULT_HERO_NAME = "Hero";
 		return new Player(DEFAULT_HERO_NAME, DEFAULT_MAX_HEALTH, DEFAULT_STARTING_ATK);
-	}	
+	}
+
+	private void extractItemDataIsPotion(boolean isPotion) throws FileNotFoundException{
+		String name = itemScanner.next() + " " + itemScanner.next();
+		int value = itemScanner.nextInt();
+		if(isPotion){
+			items.add(new Potion(name, value));
+		}else{
+			items.add(new Weapon(name,value));
+		}
+	}
 }
