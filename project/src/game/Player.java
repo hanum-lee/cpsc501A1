@@ -148,7 +148,7 @@ public class Player extends Character
 	 */
 	public void obtainExp(Enemy enemy)
 	{
-		int currentExperience = exp.getExperience() + new Enemy(enemy).getExperience();
+		int currentExperience = exp.getExperience() + new Enemy(enemy).exp.getExperience();
 		exp.setCurrentExp(currentExperience);
 	}
 	/**

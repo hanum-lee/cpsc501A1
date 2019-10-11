@@ -95,65 +95,65 @@ public class Map
 			{
 				String letter = maze[r][c];
 
-				int indexofLetter = java.util.Arrays.asList(letterArray).indexOf(letter);
-				if(indexofLetter > 0){
-					textMaze[r][c] = corresArray[indexofLetter];
-				}
-//
-//				switch(letter)
-//				{
-//				case "w":
-//					textMaze[r][c] = "#";
-//					break;
-//				case "v":
-//					textMaze[r][c] = "#";
-//					break;
-//				case "r":
-//					textMaze[r][c] = " ";
-//					break;
-//				case "x":
-//					textMaze[r][c] = "X";
-//					break;
-//				case "1":
-//					textMaze[r][c] = "?";
-//					break;
-//				case "2":
-//					textMaze[r][c] = "?";
-//					break;
-//				case "3":
-//					textMaze[r][c] = "?";
-//					break;
-//				case "4":
-//					textMaze[r][c] = "?";
-//					break;
-//				case "5":
-//					textMaze[r][c] = "?";
-//					break;
-//				case "6":
-//					textMaze[r][c] = "?";
-//					break;
-//				case "a":
-//					textMaze[r][c] = "E";
-//					break;
-//				case "b":
-//					textMaze[r][c] = "E";
-//					break;
-//				case "c":
-//					textMaze[r][c] = "E";
-//					break;
-//				case "d":
-//					textMaze[r][c] = "E";
-//					break;
-//				case "e":
-//					textMaze[r][c] = "E";
-//					break;
-//				case "n":
-//					textMaze[r][c] = " ";
-//					break;
-//				case "m":
-//					textMaze[r][c] = " ";
-//					break;
+//				int indexofLetter = java.util.Arrays.asList(letterArray).indexOf(letter);
+//				if(indexofLetter > 0){
+//					textMaze[r][c] = corresArray[indexofLetter];
 //				}
+//
+				switch(letter)
+				{
+				case "w":
+					textMaze[r][c] = "#";
+					break;
+				case "v":
+					textMaze[r][c] = "#";
+					break;
+				case "r":
+					textMaze[r][c] = " ";
+					break;
+				case "x":
+					textMaze[r][c] = "X";
+					break;
+				case "1":
+					textMaze[r][c] = "?";
+					break;
+				case "2":
+					textMaze[r][c] = "?";
+					break;
+				case "3":
+					textMaze[r][c] = "?";
+					break;
+				case "4":
+					textMaze[r][c] = "?";
+					break;
+				case "5":
+					textMaze[r][c] = "?";
+					break;
+				case "6":
+					textMaze[r][c] = "?";
+					break;
+				case "a":
+					textMaze[r][c] = "E";
+					break;
+				case "b":
+					textMaze[r][c] = "E";
+					break;
+				case "c":
+					textMaze[r][c] = "E";
+					break;
+				case "d":
+					textMaze[r][c] = "E";
+					break;
+				case "e":
+					textMaze[r][c] = "E";
+					break;
+				case "n":
+					textMaze[r][c] = " ";
+					break;
+				case "m":
+					textMaze[r][c] = " ";
+					break;
+				}
 			}
 		}
 		return textMaze;

@@ -9,7 +9,7 @@ public abstract class Character extends GameObject
 {	
 	private int health;
 	private int attack;
-	protected Experience exp;
+	public Experience exp;
 	/**
 	 * This constructor accepts as arguments the name, health, and attack
 	 * @param name The name

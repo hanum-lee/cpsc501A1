@@ -20,8 +20,5 @@ public class GameTest {
     void tearDown() {
     }
 
-    public GameTest() {
-        Game game = new Game();
-        //assertEquals();
-    }
+    
 }
