@@ -94,8 +94,6 @@ public class Map
 			for(int c = 0; c < COLS; c++) 
 			{
 				String letter = maze[r][c];
-
-
 				int indexofLetter = letters.indexOf(letter);
 				if(indexofLetter >= 0){
 					textMaze[r][c] = "" + corres.charAt(indexofLetter);
